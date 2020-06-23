@@ -1,1 +1,1 @@
-web: plex
+web: bin/plex
