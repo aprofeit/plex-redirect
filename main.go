@@ -1,8 +1,8 @@
 package main
 
 import (
-  "log"
   "net/http"
+  "github.com/rs/zerolog/log"
 )
 
 func main() {
@@ -10,5 +10,6 @@ func main() {
     http.Redirect(w, r, "https://forms.gle/xHfspeCYAvgTCyPp7", 307)
   })
 
-  log.Fatal(http.ListenAndServe(":8080", nil))
+  log.Info().Msg("Starting server")
+  log.Fatal().Err(http.ListenAndServe(":8080", nil))
 }
